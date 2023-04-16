@@ -1,4 +1,45 @@
 body {
-    background-color: rgba(35, 35, 166, 0.5);
+    width: 100%;
+    color: #ffffff;
+    margin: 0;
+    background-color: rgba(35, 35, 166, 0.4);
     font-family: sans-serif;
+}
+div {
+    width: 70vw;
+    background-color: rgba(1, 1, 27, 0.4);
+    margin: auto;
+    padding-bottom: 2em;
+}
+h1, p {
+    text-align: center;
+    font-family: Arial;
+}
+fieldset {
+    margin: 0 10px;
+    padding: 1em;
+    border: 0;
+}
+button {
+    width: 60vw;
+    display: block;
+    margin: 0 auto;
+    color: #ffffff;
+    background-color: #00bf00;
+    font-size: 16px;
+    border: 0;
+    height: 2em;
+}
+.bold {
+    font-size: 20px;
+}
+input, textarea, select {
+    width: 100%;
+    margin: 10px 0;
+}
+input[type="radio"], input[type="checkbox"] {
+    width: unset;
+}
+label {
+    display: block;
 }
