@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1">
+        <title>HTML/CSS Quiz</title>
+        <link href="quiz.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="header">
+            <img src="https://design-style-guide.freecodecamp.org/downloads/fcc_secondary_large.png" alt="freeCodeCamp logo">
+            <h1>HTML/CSS Quiz</h1>
+            <nav>
+                <ul>
+                    <li><a href="https://www.freecodecamp.org">INFO</a></li>
+                    <li><a href="https://www.freecodecamp.org">HTML</a></li>
+                    <li><a href="https://www.freecodecamp.org">CSS</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div>
+            <form>
+                <fieldset>
+                    <h2>Student Info</h2>
+                    <div class="divider"></div>
+                    <label class="indent" for="name">Name: <input id="name" type="text" name="user-name" required></label>
+                    <div class="empty-space separate"></div>
+                    <label class="indent" for="email">Email: <input id="email" type="email" name="email" required></label>
+                    <div class="empty-space separate"></div>
+                    <label class="indent" for="email">D.O.B.: <input id="birth-date" type="date" min="01/01/2010" max="01/01/1940" name="birth-date" required></label>
+                </fieldset>
+                <fieldset>
+                    <h2>HTML</h2>
+                    <div class="divider"></div>
+                    <p class="indent">Question #1</p>
+                    <p class="indent">The legend element represents a caption for the content of its parent fieldset element</p>
+                    <label class="indent" for="true"><input id="true" type="radio" name="true-false-one" value="true"> True</label>
+                    <div class="empty-space"></div>
+                    <label class="indent" for="false"><input id="false" type="radio" name="true-false-one" value="false"> False</label>
+                    <p class="indent">Question #2</p>
+                    <p class="indent">A label element nesting an input element is required to have a for attribute with the same value as the input's id</p>
+                    <label class="indent" for="true"><input id="true" type="radio" name="true-false-two" value="true"> True</label>
+                    <div class="empty-space"></div>
+                    <label class="indent" for="false"><input id="false" type="radio" name="true-false-two" value="false"> False</label>
+                </fieldset>
+                <fieldset>
+                    <h2>CSS</h2>
+                    <div class="divider"></div>
+                    <label class="indent" for="frontend">Are you a frontend developer?</label>
+                    <div class="empty-space"></div>
+                    <label class="indent" for="option">
+                        <select class="fix-width">
+                            <option>Select an option</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </label>
+                    <div class="empty-space separate"></div>
+                    <label class="indent" for="queries">Do you have any questions:<div class="empty-space"></div><textarea  class="fix-width" id="queries" name="queries" rows="5" cols="50" placeholder="Who is flexbox..."></textarea></label>    
+                </fieldset>
+            </form>
+            <button id="submit" type="submit">Send</button>
+        </div>
+        <footer>
+            <p class="no-gap"><a href="https://www.freecodecamp.org">freeCodeCamp</a></p>
+            <p class="no-gap">San Francisco</p>
+            <p class="no-gap">California</p>
+            <p class="no-gap">USA</p>
+        </footer>
+    </body>
+</html>
