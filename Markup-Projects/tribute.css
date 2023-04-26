@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+#main {
+  margin: 30px auto;
+  padding: 10px;
+  background-color: #d0d0d5;
+  border-radius: 8px;
+}
+
+.bold {
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+#header {
+  text-align: center;
+}
+
+#header h1 {
+  font-size: 40px;
+}
+
+#tribute-section-image {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+#image {
+  display: block;
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+#tribute-section {
+  padding: 3em 0 0;
+}
+
+#tribute-info {
+  margin: 5px 0;
+  padding: 1em 9em 0;
+}
+
+.tribute-line {
+  padding-bottom: 1em;
+}
+
+.tribute-lists {
+  margin: 10px 0;
+}
+
+#tribute-note {
+  font-family: "Times New Roman", sans-serif;
+  font-style: italic;
+  padding: 2em 9em;
+}
+
+#tribute-more-info {
+  text-align: center;
+  padding: 10px 0 20px;
+}
+
+#tribute-more-info p {
+  margin: 0;
+  font-weight: 700;
+}
