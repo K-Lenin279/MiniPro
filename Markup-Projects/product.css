@@ -1,0 +1,269 @@
+:root {
+  --body-color: #dfdfe2;
+  --footer-color: #9da6b8;
+  --submit-color: #ffba05;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--body-color);
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+#main {
+  position: relative;
+}
+
+#header {
+  width: 100%;
+  min-height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  background-color: var(--body-color);
+  padding: 0 1rem;
+  z-index: 99;
+}
+
+#header-img {
+  max-width: 200px;
+  max-height: 80px;
+}
+
+#header .header-subtitle {
+  font-family: "Fira Code", sans-serif;
+  font-size: 2rem;
+}
+
+#header > nav > ul {
+  display: flex;
+  flex-direction: row;
+}
+
+#header > nav > ul > li {
+  padding-left: 7rem;
+}
+
+@media (max-width: 720px) {
+  #header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  #header-img {
+    max-width: 100px;
+    max-height: 40px;
+  }
+  #header .header-subtitle {
+    font-size: 1rem;
+  }
+
+  #header > nav > ul {
+    flex-direction: column;
+  }
+}
+
+#get-started input[type='email'] {
+  padding: 0.5rem;
+  display: block;
+  margin: 1rem 0;
+  width: 20vw;
+}
+
+#get-started .button {
+  font-weight: 800;
+  font-size: 1rem;
+  padding-left: 2rem;
+  margin-left: 3.5rem;
+}
+
+#get-started {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 0;
+  margin-top: 50px;
+}
+@media (max-width: 1000px) {
+  #get-started input[type='email'] {
+    width: 60vw;
+  }
+
+  #get-started h3 {
+    margin: 0 50px;
+  }
+}
+
+#features {
+  padding-bottom: 4rem;
+}
+
+#features #fas {
+  font-size: 2.5rem;
+  color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+@media only screen and (max-width: 720px) {
+  #features #fas {
+    display: none;
+  }
+}
+
+#features .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 56vw;
+  height: 1rem;
+  margin: 0 auto;
+}
+
+#how-it-works {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  z-index: 10;
+}
+
+#pricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 2rem;
+  padding: 2rem 15rem;
+}
+
+.trombone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 3px;
+  padding-bottom: 1rem;
+}
+
+.trombone .tr-title {
+  background: var(--footer-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.trombone .price {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem;
+}
+
+.trombone ul {
+  letter-spacing: 2px;
+  padding-bottom: 1rem;
+}
+
+.trombone > ul > li {
+  padding-bottom: 0.3rem;
+}
+
+@media (max-width: 900px) {
+  #get-started {
+    margin: 70px 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  #features .info {
+    padding: 0 1rem 7rem;
+    flex-direction: column;
+    width: 80vw;
+    margin-top: 20px;
+  }
+
+  #video {
+    max-width: 90%;
+  }
+
+  #pricing {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  margin: 0 auto;
+  }
+
+  #pricing .trombone:not(.tr-title) {
+    max-width: 670px;
+    letter-spacing: 0;
+    margin: 1rem 0.2rem;
+    padding-bottom: 1rem 0;
+    text-align: center;
+  }
+}
+
+.button {
+  background-color: var(--submit-color);
+  border: 0;
+  border-radius: 3px;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.button:hover {
+  background-color: orange;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* FOOTER */
+#footer {
+  width: 80%;
+  height: 20%;
+  background-color: var(--footer-color);
+  margin: 0 auto;
+  border-radius: 5px 5px 0 0;
+}
+
+#footer-nav ul, .copyright {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#footer-nav > ul > li {
+  padding: 1rem 0.5rem 0;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0.5rem 0.5rem 1rem;
+}
