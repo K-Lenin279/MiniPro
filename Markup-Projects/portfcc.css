@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Global Classes Styling */
+
+:root {
+  --background-color: #272424;
+  --foreground-color: #b3342b;
+  --tile-color: #03396c;
+  --font-color: rgba(255, 255, 255, 0.8);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--font-color);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Colors */
+
+#header, #divider {
+  background-color: var(--foreground-color);
+}
+
+.dev {
+  color: var(--foreground-color);
+}
+
+#welcome-section, #contact, #submit, #footer {
+  background: linear-gradient(
+    45deg,
+    #444444,
+    var(--background-color)
+  );
+}
+
+#projects {
+  background-color: var(--tile-color);
+}
+
+/* Local Styles */
+
+#header {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  font-size: 21px;
+}
+
+#header #navbar > ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+#header #navbar > ul > li {
+  padding: 1.2rem 1.3rem;
+}
+
+#header #navbar > ul > li:hover {
+  background: var(--tile-color);
+}
+
+#welcome-section {
+  margin-top: 70px;
+  width: 100%;
+  height: 100vh;
+  font-size: 27px;
+  font-weight: 300;
+  padding-top: 15.5rem;
+  padding-left: 3rem;
+  text-align: center;
+}
+
+#projects {
+  padding: 7rem;
+}
+
+#projects .projects-title {
+  display: block;
+  font-size: 37px;
+  padding-left: 22rem;
+}
+
+#projects .projects-title:after {
+  content: "";
+  width: 62%;
+  border-bottom: 2px solid var(--font-color);
+  display: block;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+#projects .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 4rem 5rem;
+  font-size: 21px;
+}
+
+#projects .grid .images {
+  object-fit: cover;
+  width: 400px;
+  height: 400px;
+}
+
+#projects #submit {
+  font-size: 21px;
+  border: none;
+}
+
+#projects .btn {
+  width: 400px;
+  height: 70px;
+  border-radius: 0% 0% 3px 3px;
+}
+
+#projects .click {
+  display: block;
+}
+
+#projects .click .desc {
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  margin-left: 40rem;
+}
+
+#projects .click .desc .arrow {
+  display: inline-block;
+  font-weight: 500;
+}
+
+#projects .click .desc:hover {
+  background: unset;
+  background-color: var(--foreground-color);
+}
+
+#projects .click .desc .arrow:hover {
+  animation: arrow 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes arrow {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+@media (max-width: 1024px) {
+  #projects .project-title {
+    font-size: 20px;
+  }
+
+  #projects .grid {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 2rem;
+    margin: unset;
+  }
+
+  #projects .click .desc {
+    margin-left: 10rem;
+  }
+
+  #contact .icons, #footer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  #projects .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 1rem;
+  }
+}
+
+#contact {
+  width: 100%;
+  height: 79vh;
+  font-size: 25px;
+  padding-top: 12rem;
+}
+
+#contact .info h2 {
+  font-size: 60px;
+  text-align: center;
+}
+
+#contact .info p, #welcome-section .dev {
+  font-style: italic;
+  text-align: center;
+}
+
+#contact .icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 3rem 13rem;
+  font-size: 25px;
+}
+
+#contact .icons #fas:hover {
+  animation: SlideOut 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes SlideOut {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+#profile-contact:after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: relative;
+  border-bottom: 5px solid var(--foreground-color);
+}
+
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem 0;
+  font-size: 18px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
