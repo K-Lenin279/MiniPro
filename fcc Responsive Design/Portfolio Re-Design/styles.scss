@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* GLOBAL STYLING */
+
+
+$back-color: #303841;
+$fore-color: #be3144;
+$grid-color: #45567d;
+$text-color: #cfcece;
+$alt-color: #595656;
+$font-family: 'Poppins', 'Century Schoolbook', sans-serif;
+$width-mobile: 576px;
+$width-tablet: 768px;
+$width-large: 1200px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+@mixin responsive($width) {
+  @if $width == wide-screens {
+    @media only screen and (max-width: $width-large) { @content; }
+  }
+
+  @else if $width == tablet-screens {
+    @media only screen and (max-width: $width-tablet) { @content; }
+  }
+
+  @else if $width == mobile-screens {
+    @media only screen and (max-width: $width-mobile) { @content; }
+  }
+}
+
+/* HEADER AND NAV */
+
+#header {
+  background: $fore-color;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 9%;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: space-between;
+
+  .header-greet {
+    position: relative;
+    top: .35rem;
+    left: 2rem;
+    font-size: 2.75em;
+    color: $text-color;
+  }
+
+  #navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+
+      li {
+        list-style-type: none;
+        font-size: 1.25rem;
+        padding: 1.2rem 1rem;
+        margin-right: .9rem;
+
+        &:hover {
+          background: $grid-color;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: $text-color;
+      }
+    }
+  }
+
+  @include responsive(tablet-screens) {
+    min-height: 5%;
+    font-size: .8776rem;
+  }
+
+  @include responsive(mobile-screens) {
+    font-size: .375rem;
+
+    #navbar ul li {
+      font-size: .575rem;
+    }
+  }
+}
+
+#welcome-section {
+  background: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+  color: $text-color;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: 3.75rem;
+    letter-spacing: 0;
+  }
+
+  p {
+    color: $fore-color;
+    font-weight: 100;
+    font-style: italic;
+  }
+
+  @include responsive(mobile-screens) {
+    h1 {
+      font-size: 1.575rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: .75rem;
+    }
+  }
+}
+
+#projects {
+  background: $grid-color;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 0;
+
+  .projects-title {
+    text-decoration: underline;
+    color: $text-color;
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    font-size: 1.975rem;
+  }
+
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 3rem;
+    padding: 0 3em;
+
+    .project-tile {
+      box-shadow: 0 1px 1px 2px $back-color;
+
+      a {
+      text-decoration: none;
+
+        img {
+          display: block;
+          object-fit: cover;
+          width: 100%;
+          height: calc(100% - 3.75rem);
+        }
+  
+        p {
+          background-color: $back-color;
+          text-align: center;
+          color: $text-color;
+          font-size: 1.25rem;
+          padding: .95rem 0;
+          border-radius: 0 0 2px 2px;
+        }
+  
+        .syntax {
+          display: none;
+        }
+      }
+
+      &:hover {
+        .syntax {
+          display: inline-block;
+          color: $fore-color;
+        }
+      }
+    }
+  }
+  
+  .click {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0;
+
+    button {
+      width: 9em;
+      height: 2.9em;
+      border: none;
+      border-radius: 2px;
+      background: $back-color;
+
+      a {
+        font-size: 1.1rem;
+        text-decoration: none;
+        color: $text-color;
+
+        .fa-arrow-right {
+          font-size: .95rem;
+        }
+      }
+
+      &:hover {
+        background: $fore-color;
+
+        .fa-arrow-right {
+          transform: translateX(.2rem);
+          transition: transform .7s ease-out;
+        }
+      }
+    }
+  }
+
+  @include responsive(mobile-screens) {
+    min-height: 80vh;
+
+    .projects-title {
+      font-size: 1.15rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1rem;
+    }
+
+    .click {
+      padding: 1em 0;
+
+      button {
+        width: 7em;
+        height: 2em;
+
+        a {
+          font-size: .75rem;
+
+          .fa-arrow-right {
+            font-size: .75rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+#profile-contact {
+  background: $back-color;
+  color: $text-color;
+  height: 75vh;
+
+  .info {
+    text-align: center;
+    padding-top: 9rem;
+    padding-bottom: 2.765rem;
+
+    h2 {
+      font-size: 2.75rem;
+    }
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    #fas {
+      a {
+        font-size: 1.175rem;
+        color: $text-color;
+        text-decoration: none;
+      }
+
+      &:hover {
+        transform: translateY(.45rem);
+        transition: transform .3s ease-in-out;
+      }
+    }
+  }
+
+  @include responsive(mobile-screens) {
+    height: 80vh;
+    padding-top: 5rem;
+
+    .info {
+      padding-bottom: .75rem;
+
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: .75rem;
+        font-weight: 100;
+      }
+    }
+
+    .icons {
+      font-size: .75rem;
+
+      #fas a {
+        font-size: .75rem;
+      }
+    }
+  }
+}
+
+#footer {
+  background: $back-color;
+  color: $text-color;
+  font-size: .8776rem;
+  border-top: .25rem solid $fore-color;
+  padding: 1.75rem 0;
+  height: 15vh;
+  text-align: center;
+
+  .footer__copy a {
+    text-decoration: none;
+    color: $text-color;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  @include responsive(tablet-screens) {
+    font-size: .795rem;
+  }
+
+  @include responsive(mobile-screens) {
+    font-size: .5rem;
+    border-top: .15rem solid $fore-color;
+    padding: .75rem 0;
+    height: 10vh;
+  }
+}
